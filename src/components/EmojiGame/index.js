@@ -14,12 +14,14 @@ import {Component} from 'react'
 
 import NavBar from '../NavBar'
 import EmojiCard from '../EmojiCard'
+import WinOrLoseCard from '../WinOrLoseCard'
 import './index.css'
 
 class EmojiGame extends Component {
   state = {
     score: 0,
     topScore: 0,
+    gameEnd: true,
   }
 
   shuffledEmojisList = () => {
@@ -29,17 +31,23 @@ class EmojiGame extends Component {
   }
 
   render() {
-    const {score, topScore} = this.state
+    const {score, topScore, gameEnd} = this.state
     const shuffledList = this.shuffledEmojisList()
     console.log(shuffledList)
     return (
       <div className="emoji-game-container">
         <NavBar score={score} topScore={topScore} />
-        <ul className="emoji-cards-container">
-          {shuffledList.map(eachItem => (
-            <EmojiCard emojiDetails={eachItem} key={eachItem.id} />
-          ))}
-        </ul>
+        {gameEnd ? (
+          <div className="win-lose-card-container">
+            <WinOrLoseCard score={score} />
+          </div>
+        ) : (
+          <ul className="emoji-cards-container">
+            {shuffledList.map(eachItem => (
+              <EmojiCard emojiDetails={eachItem} key={eachItem.id} />
+            ))}
+          </ul>
+        )}
       </div>
     )
   }

@@ -16,3 +16,10 @@
   width: 100%;
   list-style-type: none;
 }
+
+.win-lose-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

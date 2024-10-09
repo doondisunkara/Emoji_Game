@@ -1,1 +1,34 @@
-// Write your code here.
+import './index.css'
+
+const WinOrLoseCard = props => {
+  const {score} = props
+  let imgUrl
+  let result
+  let scoreTitle
+  if (score === 12) {
+    imgUrl = 'https://assets.ccbp.in/frontend/react-js/won-game-img.png'
+    result = 'You Won'
+    scoreTitle = 'Best Score'
+  } else {
+    imgUrl = 'https://assets.ccbp.in/frontend/react-js/lose-game-img.png'
+    result = 'You Lose'
+    scoreTitle = 'Score'
+  }
+  return (
+    <div className="win-lose-card">
+      <div className="result-container">
+        <h1 className="game-result">{result}</h1>
+        <div className="sub-result-container">
+          <p className="score-title">{scoreTitle}</p>
+          <p className="game-score">{score}/12</p>
+          <button className="play-again-btn" type="button">
+            Play Again
+          </button>
+        </div>
+      </div>
+      <img className="win-lose-img" src={imgUrl} alt="result" />
+    </div>
+  )
+}
+
+export default WinOrLoseCard
