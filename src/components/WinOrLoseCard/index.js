@@ -1,7 +1,10 @@
 import './index.css'
 
 const WinOrLoseCard = props => {
-  const {score} = props
+  const {score, restartGame} = props
+  const onClickPlayAgain = () => {
+    restartGame()
+  }
   let imgUrl
   let result
   let scoreTitle
@@ -21,12 +24,16 @@ const WinOrLoseCard = props => {
         <div className="sub-result-container">
           <p className="score-title">{scoreTitle}</p>
           <p className="game-score">{score}/12</p>
-          <button className="play-again-btn" type="button">
+          <button
+            type="button"
+            className="play-again-btn"
+            onClick={onClickPlayAgain}
+          >
             Play Again
           </button>
         </div>
       </div>
-      <img className="win-lose-img" src={imgUrl} alt="result" />
+      <img className="win-lose-img" src={imgUrl} alt="win or lose" />
     </div>
   )
 }
