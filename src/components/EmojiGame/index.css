@@ -17,9 +17,22 @@
   list-style-type: none;
 }
 
+@media screen and (max-width: 767px) {
+  .emoji-cards-container {
+    padding: 50px 30px 50px 30px;
+  }
+}
+
 .win-lose-card-container {
   display: flex;
   justify-content: center;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .win-lose-card-container {
+    align-items: flex-start;
+    min-height: 750px;
+  }
 }

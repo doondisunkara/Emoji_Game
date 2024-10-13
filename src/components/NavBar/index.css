@@ -8,6 +8,12 @@
   width: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  .navbar-container {
+    padding: 20px 50px 20px 50px;
+  }
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -16,6 +22,12 @@
 .logo {
   height: 60px;
   margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    height: 40px;
+  }
 }
 
 .game-title {
@@ -42,4 +54,18 @@
   font-family: 'Roboto';
   font-size: 36px;
   font-weight: 800;
+}
+
+@media screen and (max-width: 767px) {
+  .game-title {
+    font-size: 24px;
+  }
+
+  .score {
+    font-size: 24px;
+  }
+
+  .top-score {
+    font-size: 24px;
+  }
 }

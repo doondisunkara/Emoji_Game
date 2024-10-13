@@ -63,6 +63,7 @@ class EmojiGame extends Component {
   changeClickedStatus = (emojiId, emojiSelectedStatus) => {
     if (emojiSelectedStatus) {
       this.setState({gameEnd: true})
+      return
     }
     const {emojisList} = this.state
     const updatedList = emojisList.map(eachEmoji => {
@@ -74,6 +75,7 @@ class EmojiGame extends Component {
     this.setState(prevState => ({
       score: prevState.score + 1,
       emojisList: updatedList,
+      gameEnd: prevState.score + 1 === 12,
     }))
   }
 
@@ -82,7 +84,7 @@ class EmojiGame extends Component {
     const shuffledList = this.shuffledEmojisList()
     return (
       <div className="emoji-game-container">
-        <NavBar score={score} topScore={topScore} />
+        <NavBar score={score} topScore={topScore} gameEnd={gameEnd} />
         {gameEnd ? (
           <div className="win-lose-card-container">
             <WinOrLoseCard score={score} restartGame={this.restartGame} />

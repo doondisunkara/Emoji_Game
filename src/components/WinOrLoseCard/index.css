@@ -11,6 +11,13 @@
   margin: 80px;
 }
 
+@media screen and (max-width: 767px) {
+  .win-lose-card {
+    flex-direction: column;
+    margin: 20px;
+  }
+}
+
 .result-container {
   display: flex;
   flex-direction: column;
@@ -20,11 +27,23 @@
   width: 50%;
 }
 
+@media screen and (max-width: 767px) {
+  .result-container {
+    width: 100%;
+  }
+}
+
 .game-result {
   color: #ffffff;
   font-family: 'Roboto';
   font-size: 96px;
   font-weight: 800;
+}
+
+@media screen and (max-width: 767px) {
+  .game-result {
+    font-size: 49px;
+  }
 }
 
 .sub-result-container {
@@ -42,12 +61,24 @@
   margin: 0px;
 }
 
+@media screen and (max-width: 767px) {
+  .score-title {
+    font-size: 32px;
+  }
+}
+
 .game-score {
   color: #6a59ff;
   font-family: 'Roboto';
   font-size: 58px;
   font-weight: 800;
   margin: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .game-score {
+    font-size: 48px;
+  }
 }
 
 .play-again-btn {
@@ -58,10 +89,19 @@
   font-weight: 800;
   border: 0px solid;
   border-radius: 25px;
+  cursor: pointer;
+  outline: none;
   padding: 16px 24px 16px 24px;
   margin-top: 20px;
 }
 
 .win-lose-img {
   width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .win-lose-img {
+    order: -1;
+    width: 60%;
+  }
 }
